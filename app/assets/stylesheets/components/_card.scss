@@ -1,0 +1,23 @@
+.card-product {
+  background-color: white;
+  margin-top: 15px;
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgb(235, 235, 235);
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+}
+
+.card-product .Product-image {
+  width: 200px;
+}
+
+.card-product .Product-info {
+  font-size: small;
+  width: 200px;
+  text-align: center;
+  align-self: center;
+
+}
