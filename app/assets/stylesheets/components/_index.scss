@@ -6,3 +6,36 @@
 @import "card";
 @import "banner";
 @import "footer";
+
+
+.cards-container {
+  display: flex;
+}
+
+.cards-container .cards {
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.cards-container #vertical-nav {
+  height: 100vh;
+  width: 20vh;
+  position: sticky;
+  top: 0;
+}
+
+.nav-list {
+  list-style: none;
+  padding-inline-start: 5px;
+}
+
+.nav-item #nav-title {
+  font-weight: bold;
+}
+
