@@ -5,6 +5,8 @@
 @import "navbar";
 @import "card";
 @import "banner";
+@import "footer";
+
 
 .cards-container {
   display: flex;
@@ -36,3 +38,4 @@
 .nav-item #nav-title {
   font-weight: bold;
 }
+
