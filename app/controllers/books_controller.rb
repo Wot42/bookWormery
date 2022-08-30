@@ -5,21 +5,20 @@ class BooksController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = current_user
     @book = Book.find(params[:id])
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @book = Book.new
   end
 
   def create
-    @user = User.find(params[:user_id])
     @book = Book.new(book_params)
-    @book.user = @user
+    @book.user = current_user
     if @book.save
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +34,7 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
+    @user = current_user
     @book = Book.find(params[:id])
   end
 
