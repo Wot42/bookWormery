@@ -1,0 +1,33 @@
+.footer {
+  background: $navbar-yellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  padding: 0px 50px;
+  color: $navbar-yellow;
+}
+
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  color: rgb(112, 112, 112);
+  font-weight: bold;
+}
+
+.footer-content :hover {
+  color: black;
+}

@@ -1,5 +1,45 @@
 .banner {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  box-shadow: 2px 2px 2px gray;
   display: flex;
-  justify-content:center
+  align-items: center;
+  justify-content: left;
+}
 
+.banner-info {
+  padding-left: 200px;
+  font-family: 'Silkscreen', cursive;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  align-self: center;
+  display: inline-block;
+  font-weight: 900;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.banner-info a {
+  border: 1px solid white;
+  font-size: 15px;
+}
+
+.banner-info a:hover {
+  background-color: black;
+  color: white;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
 }
