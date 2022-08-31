@@ -60,7 +60,7 @@
                 <h5 class="card-title"><%= book.title %></h5>
                 <p class="card-text"><%= book.genre %></p>
                 <p class="card-text">£<%= book.price %></p>
-                <%= link_to "Select", class: "btn decoration-none" %>
+                <%= link_to "Select", book_path(book), class: "text-decoration-none btn" %>
               </div>
           </div>
         <% end %>
