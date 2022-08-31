@@ -10,13 +10,13 @@ class BooksController < ApplicationController
   end
 
   def new
-    @user = current_user
     @book = Book.new
   end
 
   def create
     @book = Book.new(book_params)
     @book.user = current_user
+
     if @book.save
       redirect_to user_path(current_user)
     else
@@ -47,6 +47,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :condition, :price, :book_pic, :id)
+    params.require(:book).permit(:title, :condition, :price, :genre, :book_pic, :ISBN)
   end
 end
