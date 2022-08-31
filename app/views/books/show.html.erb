@@ -1,16 +1,17 @@
-<div class="map" style="background-image: url('<%= @book.picture_url %>')"></div>
+<div class="map"></div>
 
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
       <div class="book-show-card">
-        <h1><%= @book.name %></h1>
-        <p class="book-show-address"><%= @book.address %></p>
+         <%= image_tag @book.book_pic %>
+        <h1><%= @book.title %></h1>
+        <p class="book-show-address"><%= @book.condition %></p>
       </div>
       <div class="book-show-card">
         <h3>A bit more about this book...</h3>
-        <p><%= @book.description %></p>
-        <%# <div class="map" style="background-image: url('<%= @book.address %>')"></div> %>
+        <p><%= @book.genre %></p>
+        <%# <div class="map" style="background-image: url('<%= @book.address %>
       </div>
     </div>
 
@@ -41,7 +42,9 @@
           </div>
         </div>
       </div>
+
       <div class="flat-show-card">
+
         <div class="flex-align">
           <h6 class="no-mb">Share</h6>
 
@@ -50,6 +53,7 @@
             <i class="fa-brands fa-twitter-square me-2"></i>
             <i class="fa-brands fa-pinterest-square me-2"></i>
           </div>
+
         </div>
       </div>
     </div>
