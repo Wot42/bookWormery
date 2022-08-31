@@ -1,12 +1,27 @@
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-6 m-auto">
-      <div class="book-form">
-        <h1>Add a new Book</h1>
-        <div class="mt-3">
-          <%= render "form", book: @book %>
+<div class="container p-5 w-75">
+  <div class="card p-3 mx-9">
+
+    <h2>Add a Book</h2>
+    <br>
+    <div class="container p-3">
+      <div>
+        <%= simple_form_for(@book) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :title %>
+            <%= f.input :condition %>
+            <%= f.input :price %>
+            <%= f.input :genre %>
+            <%= f.input :ISBN %>
+            <%= f.input :book_pic %>
+
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Create" %>
+          </div>
         </div>
+        <% end %>
+
       </div>
-    </div>
   </div>
 </div>

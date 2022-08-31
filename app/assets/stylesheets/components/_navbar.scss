@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $navbar-yellow;
+  // background: $navbar-yellow;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,22 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 50px;
+}
+
+.navbar-lewagon h1 {
+  font-weight: bolder;
+  color: gold;
+}
+
+.navbar-lewagon a {
+  font-weight: bolder;
+  font-size: medium;
+  margin-right: 25px;
+  color: gold;
+  }
+
+.leather {
+  background-image: asset-url("leather-red-texture_1388-736.jpeg");
+  // background-image: linear-gradient(to bottom right, red, yellow);
+   color: gold
 }
