@@ -1,8 +1,14 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    if params[:query].present? # If they have searched
+      sql_query = "title ILIKE :query"
+      @books = Book.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @books = Book.all
+    end
   end
+
 
   def show
     @user = current_user
