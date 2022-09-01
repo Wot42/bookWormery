@@ -1,36 +1,26 @@
 <div class="map"></div>
 
-<div class="container margin-top-negative">
-  <div class="row">
-    <div class="col-8">
-      <div class="book-show-card">
-         <%= image_tag @book.book_pic %>
-        <h1><%= @book.title %></h1>
-        <p class="book-show-address"><%= @book.condition %></p>
-      </div>
-      <div class="book-show-card">
-        <h3>A bit more about this book...</h3>
-        <p><%= @book.genre %></p>
-        <%# <div class="map" style="background-image: url('<%= @book.address %>
-      </div>
+<div class="container d-">
+
+  <div class="book-show-card">
+    <%= image_tag @book.book_pic %>
+    <div>
+      <h1><%= @book.title %></h1>
+      <p class="book-show-address"><%= @book.condition %></p>
     </div>
+  </div>
+
+  <div class="book-show-card">
+    <h3>A bit more about this book...</h3>
+    <p><%= @book.genre %></p>
+    <%# <div class="map" style="background-image: url('<%= @book.address %>
+  </div>
 
     <div class="col-4">
       <div class="book-show-card">
         <h5>Buy this Book!</h5>
-
-        <%# <form action="">
-          <div class="input-group">
-            <span class="input-group-text" id="start-date-label">From:</span>
-            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-text" id="end-date-label">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
-          </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </form> %>
       </div>
+
       <div class="flat-show-card">
         <h3>Details</h3>
         <div class="flex">
@@ -59,3 +49,15 @@
     </div>
   </div>
 </div>
+
+        <%# <form action="">
+          <div class="input-group">
+            <span class="input-group-text" id="start-date-label">From:</span>
+            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-text" id="end-date-label">To:</span>
+            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
+          </div>
+          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+        </form> %>
