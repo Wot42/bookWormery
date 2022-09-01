@@ -1,3 +1,6 @@
+require "json"
+require "open-uri"
+
 class BooksController < ApplicationController
 
   def index
@@ -7,6 +10,7 @@ class BooksController < ApplicationController
   def show
     @user = current_user
     @book = Book.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
