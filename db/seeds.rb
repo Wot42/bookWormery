@@ -5,14 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require "json"
-require "open-uri"
 
-url = "https://www.goodreads.com/book/title.FORMAT"
-user_serialized = URI.open(url).read
-user = JSON.parse(user_serialized)
-
-AIzaSyCccWgCFMYv4UQH4KTCM1rk8UadvBhGoBY
 
 puts "clearing the DB"
 Book.destroy_all
@@ -28,8 +21,8 @@ puts "creating user"
   puts "creating #{user3.email} "
 
 puts "creating books"
-  book1 = Book.create(title: "Thus Spoke Zarathustra", price: 1.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/91BVK99+oZL.jpg", condition: "Used - Good", user_id: user1.id)
-  book2 = Book.create(title: "Writing and Difference", price: 3.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/519dAn-qVKL.jpg", condition: "Used - Acceptable", user_id: user2.id)
+  book1 = Book.create(title: "Thus Spoke Zarathustra", ISBN: 9780199537099, price: 1.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/91BVK99+oZL.jpg", condition: "Used - Good", user_id: user1.id)
+  book2 = Book.create(title: "Writing and Difference", ISBN: 0415253837, price: 3.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/519dAn-qVKL.jpg", condition: "Used - Acceptable", user_id: user2.id)
   book3 = Book.create(title: "The Outsider", price: 2.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/71HhB-JT8xL.jpg", condition: "New", user_id: user1.id)
   book4 = Book.create(title: "Either/Or", price: 1.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/41QNNANE2PL._SX307_BO1,204,203,200_.jpg", condition: "Used - Very Good", user_id: user3.id)
   book5 = Book.create(title: "Simulacra and Simulation", genre: "Philosophy", price: 5.99, book_pic: "https://images-na.ssl-images-amazon.com/images/I/41+odtb-dML.jpg", condition: "New", user_id: user2.id)

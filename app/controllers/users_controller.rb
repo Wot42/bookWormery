@@ -9,6 +9,6 @@ class UsersController < ApplicationController
 
   def basket
     @user = current_user
-    @books = @users.bookings.books
+    @books = @user.bookings.books
   end
 end
