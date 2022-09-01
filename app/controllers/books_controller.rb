@@ -4,8 +4,14 @@ require "open-uri"
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    if params[:query].present? # If they have searched
+      sql_query = "title ILIKE :query"
+      @books = Book.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @books = Book.all
+    end
   end
+
 
   def show
     @user = current_user
@@ -22,7 +28,7 @@ class BooksController < ApplicationController
     @book.user = current_user
 
     if @book.save
-      redirect_to user_path(current_user)
+      redirect_to shop_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -45,7 +51,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to user_path(@book.user), status: :see_other
+    redirect_to shop_path(@book.user), status: :see_other
   end
 
   private
