@@ -1,16 +1,17 @@
 .footer {
-  background: $navbar-yellow;
+  background-image: asset-url("leather-red-texture_1388-736.jpeg");
+  color: gold;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content:flex-start;
   height: 100px;
   padding: 0px 50px;
   color: $navbar-yellow;
 }
 
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: gold;
+  opacity: 0.55;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -24,8 +25,12 @@
   display: flex;
   justify-content: space-between;
   width: 350px;
-  color: rgb(112, 112, 112);
-  font-weight: bold;
+  // color: rgb(112, 112, 112);
+  // font-weight: bold;
+  font-weight: bolder;
+  font-size: medium;
+  margin-right: 25px;
+  color: gold;
 }
 
 .footer-content :hover {
