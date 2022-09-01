@@ -8,7 +8,10 @@ class UsersController < ApplicationController
   end
 
   def basket
-    @user = current_user
-    @books = @users.bookings.books
+    @user = User.find(params[:id])
+    @books = []
+    @user.bookings.each do |booking|
+      @books << booking.book
+    end
   end
 end
