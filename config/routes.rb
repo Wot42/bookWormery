@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users, only: [:show]
   resources :books
-  get "/users/:id/shop", to: "users#shop"
-  get "/users/:id/basket", to: "users#basket"
-
-
+  resources :bookings, only: [:create, :delete]
+  get "/users/:id/shop", to: "users#shop", as: "shop"
+  get "/users/:id/basket", to: "users#basket", as: "basket"
 end

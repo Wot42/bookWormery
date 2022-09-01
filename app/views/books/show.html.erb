@@ -1,52 +1,40 @@
 <div class="map"></div>
 
-<div class="container margin-top-negative">
-  <div class="row">
-    <div class="col-8">
-      <div class="book-show-card">
-         <%= image_tag @book.book_pic %>
-        <h1><%= @book.title %></h1>
-        <p class="book-show-address"><%= @book.condition %></p>
-      </div>
-      <div class="book-show-card">
-        <h3>A bit more about this book...</h3>
-        <p><%= @book.genre %></p>
-        <%# <div class="map" style="background-image: url('<%= @book.address %>
-      </div>
+<div class="d-flex justify-content-around">
+
+  <div class="book-show-card d-flex flex-column mt-3">
+    <div class="img-fluid img-thumbnail" style="width: 400px ">
+      <%= image_tag @book.book_pic, class: "w-100" %>
     </div>
+  </div>
 
-    <div class="col-4">
-      <div class="book-show-card">
-        <h5>Buy this Book!</h5>
+  <div class="book-show-card mt-5 d-flex flex-column justify-content-left">
+    <div class= m-3>
+      <h1><%= @book.title %></h1>
+      <h3 class="book-show-address"><%= @book.condition %></h3>
+    </div>
+    <div class=mt-5>
+      <h3>A bit more about this book...</h3>
+      <p>GENRE:   <%= @book.genre %></p>
+    <%# <div class="map" style="background-image: url('<%= @book.address %>
+    </div>
+  </div>
 
-        <%# <form action="">
-          <div class="input-group">
-            <span class="input-group-text" id="start-date-label">From:</span>
-            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-text" id="end-date-label">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
-          </div>
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </form> %>
+    <div class="d-flex flex-column m-5">
+      <div class="book-show-card mb-3 btn btn-lg ">
+        <%= link_to "Buy this Book!", bookings_path(bookId: @book.id), data:{turbo_method: :post}%>
       </div>
+
       <div class="flat-show-card">
-        <h3>Details</h3>
-        <div class="flex">
-          <div class="flex">
-            <%= @book.condition %>
-          </div>
-          <div class="flex ms-3">
-            <%= @book.price %>£
-          </div>
+        <div class="m-4">
+          <h3>£ <%= @book.price %></h3>
         </div>
       </div>
 
-      <div class="flat-show-card">
+      <div class="flat-show-card px-3">
 
-        <div class="flex-align">
-          <h6 class="no-mb">Share</h6>
+        <div class="mt-4">
+          <h6>Share</h6>
 
           <div class="flex">
             <i class="fa-brands fa-facebook-square me-2"></i>
@@ -59,3 +47,15 @@
     </div>
   </div>
 </div>
+
+        <%# <form action="">
+          <div class="input-group">
+            <span class="input-group-text" id="start-date-label">From:</span>
+            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-text" id="end-date-label">To:</span>
+            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
+          </div>
+          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+        </form> %>
