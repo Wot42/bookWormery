@@ -24,7 +24,7 @@ class BooksController < ApplicationController
     @book.user = current_user
 
     if @book.save
-      redirect_to user_path(current_user)
+      redirect_to shop_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,7 +47,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to user_path(@book.user), status: :see_other
+    redirect_to shop_path(@book.user), status: :see_other
   end
 
   private
