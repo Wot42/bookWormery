@@ -8,33 +8,40 @@
 @import "footer";
 
 
-.cards-container {
-  display: flex;
-}
-
-.cards-container .cards {
-  flex-grow: 1;
-  padding: 16px;
-}
-
-// .cards {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr;
-//   grid-gap: 16px;
+// .cards-container {
+//   display: flex;
 // }
-
-.cards-container #vertical-nav {
-  height: 100vh;
-  width: 20vh;
-  position: sticky;
-  top: 0;
+*{
+  margin: 0;
+  padding: 0;
 }
-
 .nav-list {
   list-style: none;
   padding-inline-start: 5px;
 }
 
-.nav-item #nav-title {
+.filter-item #filter-title {
   font-weight: bold;
+}
+
+.filter h6 {
+  font-size: 18px;
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-right: 0rem;
+  padding-left: 3.5rem;
+}
+
+#search_row {
+  height: 5rem;
+  margin: 10px 41px 10px 292px;
+}
+
+#search-bar-input {
+  font-size: 1.25rem;
+}
+
+#search-button {
+    background-color: #954854;
+    color: gold;
 }
