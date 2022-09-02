@@ -8,22 +8,22 @@
     </div>
   </div>
 
-  <div class="book-show-card mt-5 d-flex flex-column justify-content-left">
-    <div class= "m-3 p-1">
+  <div class="book-show-card mt-5 px-3 d-flex flex-column justify-content-space-evenly">
+    <div class= "m-5">
       <h1><%= @book.title %></h1>
       <h3 class="book-show-address"><%= @book.condition %></h3>
       <p><%= @book.genre %></p>
     </div>
-    <div class=mt-5>
+    <div class="m-5">
       <h3>A bit more about this book...</h3>
       <p><%= @book.comment %></p>
     <%# <div class="map" style="background-image: url('<%= @book.address %>
     </div>
   </div>
 
-    <div class="d-flex flex-column m-5">
-      <div class="book-show-card mb-3 btn btn-lg">
-        <%= link_to "Buy this Book!", bookings_path(bookId: @book.id), data:{turbo_method: :post}%>
+    <div class="d-flex flex-column justify-content-left m-5 w-50">
+      <div class="book-show-card me-auto btn btn-lg">
+        <%= link_to "Buy this Book!", bookings_path(bookId: @book.id), data:{turbo_method: :post}, class:"text-decoration-none"%>
       </div>
 
       <div class="flat-show-card">
