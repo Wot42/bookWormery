@@ -56,14 +56,25 @@
 
     <div class="cards col-10  ">
       <% @books.each do |book| %>
-        <div class="card">
-          <img src =<%= book.book_pic %> class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title"><%= book.title %></h5>
-              <p class="card-text"><%= book.genre %></p>
-              <p class="card-text">£<%= book.price %></p>
-              <%= link_to "Select", book_path(book), class: "text-decoration-none btn" %>
+         <div class="card">
+          <%= link_to book_path(book) do %>
+            <img src =<%= book.book_pic %> class="card-img-top">
+          <% end %>
+          <div class="card-body d-flex w-100 justify-content-between flex-column">
+            <div class="w-100 d-flex">
+              <h5 class="card-title mb-auto"><%= book.title %></h5>
             </div>
+            <br>
+            <div class="w-100 d-flex flex-column">
+              <div class="w-100 d-flex justify-content-between">
+                <p class="card-text"><%= book.genre %></p>
+                <p class="card-text">£<%= book.price %></p>
+              </div>
+              <div class="w-100 d-flex justify-content-around">
+                <%= link_to "Select", book_path(book), class: "text-decoration-none btn" %>
+              </div>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

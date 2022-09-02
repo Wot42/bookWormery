@@ -8,9 +8,9 @@
         <%= simple_form_for(@book) do |f| %>
           <div class="form-inputs">
             <%= f.input :title %>
-            <%= f.input :condition %>
+            <%= f.input :condition, collection: [ "New", "Used - Excellent", "Used - Good", "Used - Acceptable"] %>
             <%= f.input :price %>
-            <%= f.input :genre %>
+            <%= f.input :genre, collection: ["Philosophy", "Literature", "History"] %>
             <%= f.input :ISBN %>
             <%= f.input :book_pic %>
 
