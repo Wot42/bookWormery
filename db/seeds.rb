@@ -8,6 +8,7 @@
 
 
 puts "clearing the DB"
+Booking.destroy_all
 Book.destroy_all
 User.destroy_all
 puts "DB clean"
@@ -21,8 +22,8 @@ puts "creating user"
   puts "creating #{user3.email} "
 
 puts "creating books"
-  book1 = Book.create(title: "Thus Spoke Zarathustra", ISBN: 9780199537099, price: 1.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/91BVK99+oZL.jpg", condition: "Used - Good", user_id: user1.id)
-  book2 = Book.create(title: "Writing and Difference", ISBN: 0415253837, price: 3.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/519dAn-qVKL.jpg", condition: "Used - Acceptable", user_id: user2.id)
+  book1 = Book.create(title: "Thus Spoke Zarathustra", price: 1.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/91BVK99+oZL.jpg", condition: "Used - Good", user_id: user1.id)
+  book2 = Book.create(title: "Writing and Difference", price: 3.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/519dAn-qVKL.jpg", condition: "Used - Acceptable", user_id: user2.id)
   book3 = Book.create(title: "The Outsider", price: 2.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/71HhB-JT8xL.jpg", condition: "New", user_id: user1.id)
   book4 = Book.create(title: "Either/Or", price: 1.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/41QNNANE2PL._SX307_BO1,204,203,200_.jpg", condition: "Used - Very Good", user_id: user3.id)
   book5 = Book.create(title: "Simulacra and Simulation", genre: "Philosophy", price: 5.99, book_pic: "https://images-na.ssl-images-amazon.com/images/I/41+odtb-dML.jpg", condition: "New", user_id: user2.id)
@@ -32,7 +33,7 @@ puts "creating books"
   book9 = Book.create(title: "From Bacteria to Bach and Back", price: 1.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/91qF5NhtomL.jpg", condition: "Used - Acceptable", user_id: user3.id)
   book10 = Book.create(title: "The Epic of Gilgamesh", price: 1.99, genre: "Classics", book_pic: "https://pictures.abebooks.com/isbn/9780141026282-uk.jpg", condition: "Used - Excellent", user_id: user2.id)
   book11 = Book.create(title: "Gödel, Escher, Bach", price: 3.99, genre: "Philosophy", book_pic: "https://images-na.ssl-images-amazon.com/images/I/81FPDNQp85L.jpg", condition: "Used - Excellent", user_id: user1.id)
-  book12 = Book.create(title: "The Interpretation of Dreams", price: 3.49, genre: "Psicology", book_pic: "https://www.karnacbooks.com/Covers/9034.jpg", condition: "Used - Good", user_id: user1.id)
+  book12 = Book.create(title: "The Interpretation of Dreams", price: 3.49, genre: "Psychology", book_pic: "https://www.karnacbooks.com/Covers/9034.jpg", condition: "Used - Good", user_id: user1.id)
 
 puts "creating #{book1.title} "
 puts "creating #{book2.title} "
