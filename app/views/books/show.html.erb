@@ -9,19 +9,19 @@
   </div>
 
   <div class="book-show-card mt-5 d-flex flex-column justify-content-left">
-    <div class= m-3>
+    <div class= "m-3 p-1">
       <h1><%= @book.title %></h1>
       <h3 class="book-show-address"><%= @book.condition %></h3>
+      <p><%= @book.genre %></p>
     </div>
     <div class=mt-5>
       <h3>A bit more about this book...</h3>
-      <p>GENRE:   <%= @book.genre %></p>
     <%# <div class="map" style="background-image: url('<%= @book.address %>
     </div>
   </div>
 
     <div class="d-flex flex-column m-5">
-      <div class="book-show-card mb-3 btn btn-lg ">
+      <div class="book-show-card mb-3 btn btn-lg">
         <%= link_to "Buy this Book!", bookings_path(bookId: @book.id), data:{turbo_method: :post}%>
       </div>
 
@@ -34,7 +34,7 @@
       <div class="flat-show-card px-3">
 
         <div class="mt-4">
-          <h6>Share</h6>
+          <h4>Share</h4>
 
           <div class="flex">
             <i class="fa-brands fa-facebook-square me-2"></i>
