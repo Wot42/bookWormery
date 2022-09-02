@@ -1,23 +1,8 @@
 <div class="container-content">
 
-  <div class="row" id="search_row">
+  <div class="d-flex">
 
-      <%= form_with url: books_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      id: "search-bar-input",
-      placeholder: "Get yours"
-     %>
-     <%= submit_tag "Search", class: "btn", id: "search-button" %>
-     <% end %>
-
-  </div>
-
-  <div class="row">
-
-    <div class="filter col-2 flex-column">
-
+    <div class="flex-direction-column mt-4">
       <div class="dropdown">
         <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           <h6>Filter by Category</h6>
@@ -54,7 +39,23 @@
 
     </div>
 
-    <div class="cards col-10  ">
+  <div class="d-flex flex-column">
+    <div class="w-100 d-flex mx-5 my-3">
+
+      <%= form_with url: books_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      id: "search-bar-input",
+      :size=>"105",
+      placeholder: "Get yours"
+      %>
+      <%= submit_tag "Search", class: "btn", id: "search-button" %>
+      <% end %>
+
+  </div>
+
+    <div class="cards mx-5">
       <% @books.each do |book| %>
          <div class="card">
           <%= link_to book_path(book) do %>
@@ -78,53 +79,7 @@
         </div>
       <% end %>
     </div>
-
+  </div>
   </div>
 
 </div>
-
-
-<%#
-<ul class="-list">
-        <li class="nav-item">
-          <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Price
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">£ 0 - 10</a></li>
-              <li><a class="dropdown-item" href="#">£ 10 - 20</a></li>
-              <li><a class="dropdown-item" href="#">£ More than 20</a></li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Condition
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">New</a></li>
-              <li><a class="dropdown-item" href="#">Used - Excellent</a></li>
-              <li><a class="dropdown-item" href="#">Used - Good</a></li>
-              <li><a class="dropdown-item" href="#">Used - Acceptable</a></li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="nav-item">
-          <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Genre
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Literature</a></li>
-              <li><a class="dropdown-item" href="#">Rare books</a></li>
-              <li><a class="dropdown-item" href="#">Non-fiction</a></li>
-              <li><a class="dropdown-item" href="#">Philosophy</a></li>
-            </ul>
-          </div>
-        </li>
-
-      </ul> %>
