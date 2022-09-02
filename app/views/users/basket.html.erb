@@ -1,62 +1,62 @@
-<div class="cards-container d-flex justify-content-between">
+<div class="container-content">
 
-  <div id="vertical-nav d-block">
-    <ul class="nav-list">
+  <div class="d-flex">
 
-      <li class="nav-item">
-        <a class="nav-link" id="nav-title" role="button">Filters</a>
-      </li>
-
-      <li class="nav-item">
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Price
-          </button>
+    <div class="flex-direction-column mt-4">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <h6>Filter by Category</h6>
+        </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">£ 0 - 10</a></li>
-            <li><a class="dropdown-item" href="#">£ 10 - 20</a></li>
-            <li><a class="dropdown-item" href="#">£ More than 20</a></li>
+            <li><a class="dropdown-item" href="#">Philosophy</a></li>
+            <li><a class="dropdown-item" href="#">Literature</a></li>
+            <li><a class="dropdown-item" href="#">History</a></li>
           </ul>
-        </div>
-      </li>
+      </div>
 
-      <li class="nav-item">
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Condition
-          </button>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <h6>Condition</h6>
+        </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item" href="#">New</a></li>
-            <li><a class="dropdown-item" href="#">Good</a></li>
-            <li><a class="dropdown-item" href="#">Good-Visible damage</a></li>
-            <li><a class="dropdown-item" href="#">Bad-Extensive damage</a></li>
+            <li><a class="dropdown-item" href="#">Used - Excellent</a></li>
+            <li><a class="dropdown-item" href="#">Used - Good</a></li>
+            <li><a class="dropdown-item" href="#">Used - Acceptable</a></li>
           </ul>
-        </div>
-      </li>
+      </div>
 
-      <li class="nav-item">
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Genre
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Fantasy</a></li>
-            <li><a class="dropdown-item" href="#">Classics</a></li>
-            <li><a class="dropdown-item" href="#">Non-fiction</a></li>
-            <li><a class="dropdown-item" href="#">Filosophy</a></li>
-          </ul>
-        </div>
-      </li>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <h6>Price</h6>
+        </button>
+         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+           <li><a class="dropdown-item" href="#">£0 - £10</a></li>
+           <li><a class="dropdown-item" href="#">£10 - £20</a></li>
+           <li><a class="dropdown-item" href="#">> £20</a></li>
+         </ul>
+      </div>
 
-    </ul>
-  </div>
-  <div class="rightside ">
-    <div class= "w-100 d-flex justify-content-between p-3">
-
-      <h1><%=@user.user_name%>'s Basket</h1>
     </div>
 
-    <div class="cards">
+  <div class="d-flex flex-column">
+    <div class="w-100 d-flex mx-5 my-3">
+
+      <%= form_with url: books_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      id: "search-bar-input",
+      :size=>"105",
+      placeholder: "Get yours"
+      %>
+      <%= submit_tag "Search", class: "btn", id: "search-button" %>
+      <% end %>
+
+  </div>
+
+
+    <div class="cards mx-5">
       <% @books.each do |book| %>
         <div class="card">
           <%= link_to book_path(book) do %>
