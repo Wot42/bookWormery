@@ -12,20 +12,10 @@ class BooksController < ApplicationController
     end
   end
 
-
   def show
     @user = current_user
     @book = Book.find(params[:id])
     @booking = Booking.new
-    url = "http://openlibrary.org/isbn/#{@book.isbn}"
-    book_json = URI.open(url).read
-    @book_api = JSON.parse(book_json)
-    key = @book_api["works"]["key"]
-    url_new = "https://openlibrary.org/#{key}.json"
-    json = URI.open(url_new).read
-    @book_key = JSON.parse(json)
-    raise
-
   end
 
   def new
