@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :bookings, only: [:create, :delete]
   get "/users/:id/shop", to: "users#shop", as: "shop"
   get "/users/:id/basket", to: "users#basket", as: "basket"
+  delete "bookings/:id", to: "bookings#destroy", as: "remove_booking"
 end
